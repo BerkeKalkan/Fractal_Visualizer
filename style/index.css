@@ -1,0 +1,14 @@
+.form {
+  margin: 1vh;
+}
+
+.canvas {
+  height: auto;
+  width: 100vh;
+  display:block; margin:1em auto; background:#fff; border:1px solid #ccc
+}
+
+#canvas {
+  height: 90vh;
+  width: 100vh;
+}
