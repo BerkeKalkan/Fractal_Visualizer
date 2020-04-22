@@ -11,7 +11,7 @@ function drawJuliaSet(){
   //let yMax = form[2].value;
   let cReal = -0.79 //parseFloat(form[3].value);
   let cImag = 0.15 //parseFloat(form[4].value);
-  //let kValue = 50;
+  let kValue = 50;
 
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
