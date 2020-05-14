@@ -1,13 +1,20 @@
 const IMAGE_HEIGHT = 2048;
 const IMAGE_WIDTH = 2048;
+const presetValues = {
+  0 : [4, 2, 2, -0.79, 0.15],
+  1 : [4, 2, 2, 0.28, 0.008],
+  2 : [4, 2, 2, -0.5, -0.56]
+}
 
 window.onload = function(){
   // getPresetValues()
-  document.getElementById('name').defaultValue = 4;
-  document.getElementById('xMax').defaultValue = 2;
-  document.getElementById('yMax').defaultValue = 2;
-  document.getElementById('cReal').defaultValue = -0.79;
-  document.getElementById('cImag').defaultValue = 0.15;
+  let randomValue = Math.floor(Math.random() * 3);
+  let choosenValues = presetValues[randomValue];
+  document.getElementById('name').defaultValue = choosenValues[0];
+  document.getElementById('xMax').defaultValue = choosenValues[1];
+  document.getElementById('yMax').defaultValue = choosenValues[2];
+  document.getElementById('cReal').defaultValue = choosenValues[3];
+  document.getElementById('cImag').defaultValue = choosenValues[4];
 
   // Clear the canvas
   var ctx = canvas.getContext('2d');
