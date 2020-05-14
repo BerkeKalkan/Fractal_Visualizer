@@ -1,17 +1,32 @@
 const IMAGE_HEIGHT = 2048;
 const IMAGE_WIDTH = 2048;
 
+window.onload = function(){
+  // getPresetValues()
+  document.getElementById('name').defaultValue = 4;
+  document.getElementById('xMax').defaultValue = 2;
+  document.getElementById('yMax').defaultValue = 2;
+  document.getElementById('cReal').defaultValue = -0.79;
+  document.getElementById('cImag').defaultValue = 0.15;
+
+  // Clear the canvas
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.height, canvas.width);
+  // Draw preset fractal
+  this.drawJuliaSet();
+}
+
 function drawJuliaSet(){
   // Get form values
   let form = document.getElementById('form');
 
   // FIX ME CHECK INPUTS FOR UNWANTED STUFF
-  let rValue = 4; //parseFloat(form[0].value);
-  //let xMax = form[1].value;
-  //let yMax = form[2].value;
-  let cReal = -0.79 //parseFloat(form[3].value);
-  let cImag = 0.15 //parseFloat(form[4].value);
-  let kValue = 50;
+  let rValue = parseFloat(form[0].value);
+  let xMax = form[1].value;
+  let yMax = form[2].value;
+  let cReal = parseFloat(form[3].value);
+  let cImag = parseFloat(form[4].value);
+  let kValue = 50; // Might change later
 
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
